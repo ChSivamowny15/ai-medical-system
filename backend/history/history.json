@@ -1,0 +1,112 @@
+[
+    {
+        "patient_name": null,
+        "patient_age": null,
+        "patient_gender": null,
+        "patient_symptoms": null,
+        "scan_type": "CT",
+        "prediction": "yes",
+        "confidence": 85.45,
+        "time": "2026-05-17 18:26:12.945044"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "20",
+        "patient_gender": "Female",
+        "patient_symptoms": "headache",
+        "scan_type": "CT",
+        "prediction": "yes",
+        "confidence": 85.45,
+        "time": "2026-05-17 18:33:29.628589"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "20",
+        "patient_gender": "Male",
+        "patient_symptoms": "stomach pain",
+        "scan_type": "MRI",
+        "prediction": "no",
+        "confidence": 99.98,
+        "time": "2026-05-17 18:35:41.684918"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "20",
+        "patient_gender": "Male",
+        "patient_symptoms": "headache",
+        "scan_type": "MRI",
+        "prediction": "no",
+        "confidence": 99.98,
+        "time": "2026-05-17 18:36:55.395879"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "20",
+        "patient_gender": "Female",
+        "patient_symptoms": "headache",
+        "scan_type": "MRI",
+        "prediction": "no",
+        "confidence": 99.98,
+        "time": "2026-05-18 06:22:20.798016"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "20",
+        "patient_gender": "Male",
+        "patient_symptoms": "headache",
+        "scan_type": "MRI",
+        "prediction": "no",
+        "confidence": 99.83,
+        "time": "2026-05-18 06:28:21.749904"
+    },
+    {
+        "patient_name": "mouni",
+        "patient_age": "18",
+        "patient_gender": "Male",
+        "patient_symptoms": "headache",
+        "scan_type": "MRI",
+        "prediction": "no",
+        "confidence": 99.83,
+        "time": "2026-05-18 06:31:33.890970"
+    },
+    {
+        "patient_name": "siva",
+        "patient_age": "19",
+        "patient_gender": "Male",
+        "patient_symptoms": "stomach pain",
+        "scan_type": "UV",
+        "prediction": "yes",
+        "confidence": 97.11,
+        "time": "2026-05-18 06:32:42.404615"
+    },
+    {
+        "patient_name": "pinky",
+        "patient_age": "30",
+        "patient_gender": "Male",
+        "patient_symptoms": "Leg pain",
+        "scan_type": "MRI",
+        "prediction": "yes",
+        "confidence": 96.29,
+        "time": "2026-05-18 07:10:21.109087"
+    },
+    {
+        "patient_name": "pinky",
+        "patient_age": "30",
+        "patient_gender": "Male",
+        "patient_symptoms": "Leg pain",
+        "scan_type": "MRI",
+        "prediction": "yes",
+        "confidence": 96.29,
+        "time": "2026-05-18 07:10:28.489113"
+    },
+    {
+        "patient_name": "kanmani",
+        "patient_age": "16",
+        "patient_gender": "Female",
+        "patient_symptoms": "headache",
+        "scan_type": "MRI",
+        "prediction": "yes",
+        "confidence": 75.38,
+        "time": "2026-05-18 07:19:35.929575"
+    }
+]

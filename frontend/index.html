@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Multimodal Medical System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            overflow-x: hidden;
+
+            /* 👨‍⚕️ Doctor Background */
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.75)),
+                url("https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=1974&auto=format&fit=crop") no-repeat center center fixed;
+
+            background-size: cover;
+        }
+
+        .container {
+            width: 100%;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 46px;
+            color: #00e5ff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px #00c6ff;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* 🔥 CARDS */
+
+        .scan-container {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .scan-card {
+            width: 220px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 18px;
+            backdrop-filter: blur(10px);
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .scan-card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 0 25px #00c6ff;
+        }
+
+        /* ✅ IMAGE INSIDE BOX */
+
+        .scan-card img {
+            width: 115px;
+            height: 115px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            border-radius: 15px;
+        }
+
+        .scan-card h2 {
+            color: #00e5ff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .scan-card p {
+            font-size: 14px;
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        /* 🔘 BUTTONS */
+
+        .button-container {
+            margin-top: 35px;
+        }
+
+        .btn {
+            padding: 13px 28px;
+            margin: 10px;
+            border-radius: 35px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .predict {
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+        }
+
+        .history {
+            background: linear-gradient(45deg, #ff6a00, #ff3c00);
+        }
+
+        .dashboard {
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px white;
+        }
+
+        @media(max-width:900px) {
+
+            .scan-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🩺 AI Multimodal Medical System</h1>
+
+        <p class="subtitle">
+            MRI • CT Scan • UV Scan • AI Diagnosis • Smart Healthcare
+        </p>
+
+        <!-- 🔥 MRI / CT / UV BOXES -->
+
+        <div class="scan-container">
+
+            <!-- 🧠 MRI -->
+
+            <div class="scan-card">
+
+                <img src="https://img.icons8.com/color/240/brain.png">
+
+                <h2>MRI Scan</h2>
+
+                <p>
+                    AI-powered brain MRI analysis for tumor detection.
+                </p>
+
+            </div>
+
+            <!-- 🫁 CT -->
+
+            <div class="scan-card">
+
+                <img src="https://img.icons8.com/color/240/lungs.png">
+
+                <h2>CT Scan</h2>
+
+                <p>
+                    CT scan analysis for lungs and organ abnormalities.
+                </p>
+
+            </div>
+
+            <!-- 🩹 UV -->
+
+            <div class="scan-card">
+
+                <img src="https://img.icons8.com/color/240/dermatology.png">
+
+                <h2>UV Scan</h2>
+
+                <p>
+                    UV imaging for skin lesion and infection detection.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 🔘 BUTTONS -->
+
+        <div class="button-container">
+
+            <a href="test.html" class="btn predict">
+                🔍 Predict
+            </a>
+
+            <a href="history.html" class="btn history">
+                📊 History
+            </a>
+
+            <a href="dashboard.html" class="btn dashboard">
+                📈 Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

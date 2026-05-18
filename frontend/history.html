@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Medical History</title>
+
+    <style>
+        body {
+
+            margin: 0;
+
+            font-family: 'Segoe UI', sans-serif;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.72),
+                    rgba(0, 0, 0, 0.72)),
+                url("https://thumbs.dreamstime.com/z/medical-record-patient-card-history-diagnosis-medicine-checklist-checkbox-healthcare-insurance-service-vector-healthy-169757625.jpg") no-repeat center center fixed;
+
+            background-size: cover;
+
+            color: white;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            position: absolute;
+
+            top: 20px;
+
+            right: 30px;
+
+            z-index: 1000;
+        }
+
+        .navbar a {
+
+            text-decoration: none;
+
+            color: white;
+
+            background: rgba(0, 198, 255, 0.2);
+
+            padding: 10px 18px;
+
+            margin-left: 10px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar a:hover {
+
+            background: #00c6ff;
+
+            transform: scale(1.08);
+        }
+
+        .container {
+
+            width: 92%;
+
+            margin: auto;
+
+            padding-top: 40px;
+
+            padding-bottom: 50px;
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #00e5ff;
+
+            font-size: 48px;
+
+            margin-bottom: 35px;
+
+            text-shadow: 0 0 15px #00c6ff;
+        }
+
+        .scan-buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 28px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 45px;
+        }
+
+        .scan-box {
+
+            width: 260px;
+
+            background: rgba(0, 0, 0, 0.55);
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .scan-box:hover {
+
+            transform: translateY(-10px) scale(1.04);
+
+            box-shadow: 0 0 25px #00c6ff;
+        }
+
+        .scan-box img {
+
+            width: 100%;
+
+            height: 180px;
+
+            object-fit: cover;
+        }
+
+        .scan-box h2 {
+
+            text-align: center;
+
+            color: #00e5ff;
+
+            padding: 18px;
+        }
+
+        .history-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(340px, 1fr));
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background: rgba(0, 0, 0, 0.55);
+
+            border-radius: 22px;
+
+            padding: 25px;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 0 25px #00c6ff;
+        }
+
+        .scan-type {
+
+            color: #00e5ff;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .status-yes {
+
+            color: #ff4d4d;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .status-no {
+
+            color: #00ff99;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .info {
+
+            margin-top: 15px;
+
+            line-height: 2;
+
+            font-size: 15px;
+        }
+
+        .time {
+
+            margin-top: 18px;
+
+            opacity: 0.85;
+
+            font-size: 13px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <a href="index.html">Home</a>
+
+        <a href="test.html">Predict</a>
+
+        <a href="dashboard.html">Dashboard</a>
+
+    </div>
+
+    <div class="container">
+
+        <h1>📜 Medical Scan History</h1>
+
+        <!-- SCAN BUTTONS -->
+
+        <div class="scan-buttons">
+
+            <div class="scan-box" onclick="loadHistory('MRI')">
+
+                <img
+                    src="https://sjra-media.s3.us-west-2.amazonaws.com/wp-content/uploads/2024/03/10170226/Multiple-Views-Of-Brain-MRI-Results.webp">
+
+                <h2>🧠 MRI History</h2>
+
+            </div>
+
+            <div class="scan-box" onclick="loadHistory('CT')">
+
+                <img
+                    src="https://media.post.rvohealth.io/wp-content/uploads/sites/3/2022/12/COPD-lung-scans-1296x728-slide1.jpg">
+
+                <h2>🫁 CT History</h2>
+
+            </div>
+
+            <div class="scan-box" onclick="loadHistory('UV')">
+
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYT-dMlYncE01gFnDk25KJLV6I1q44S6_2pTns8EV&s">
+
+                <h2>🩹 UV History</h2>
+
+            </div>
+
+        </div>
+
+        <!-- HISTORY -->
+
+        <div id="historyContainer" class="history-grid"></div>
+
+    </div>
+
+    <script>
+
+        let allData = [];
+
+        fetch("http://127.0.0.1:5000/history")
+
+            .then(res => res.json())
+
+            .then(data => {
+
+                allData = data.reverse();
+
+            });
+
+        function loadHistory(type) {
+
+            const container =
+                document.getElementById("historyContainer");
+
+            container.innerHTML = "";
+
+            const filtered =
+                allData.filter(item =>
+                    item.scan_type === type
+                );
+
+            filtered.forEach(item => {
+
+                let statusClass =
+                    item.prediction === "yes"
+                        ? "status-yes"
+                        : "status-no";
+
+                let resultText =
+                    item.prediction === "yes"
+                        ? "⚠ Abnormality Detected"
+                        : "✅ Normal";
+
+                const card = document.createElement("div");
+
+                card.className = "card";
+
+                card.innerHTML = `
+
+                    <div class="scan-type">
+                        🩺 ${item.scan_type}
+                    </div>
+
+                    <div class="${statusClass}">
+                        ${resultText}
+                    </div>
+
+                    <div class="info">
+
+                        👤 <b>Name:</b>
+                        ${item.patient_name || "N/A"}
+                        <br>
+
+                        🎂 <b>Age:</b>
+                        ${item.patient_age || "N/A"}
+                        <br>
+
+                        ⚧ <b>Gender:</b>
+                        ${item.patient_gender || "N/A"}
+                        <br>
+
+                        🩺 <b>Symptoms:</b>
+                        ${item.patient_symptoms || "N/A"}
+                        <br>
+
+                        📊 <b>Confidence:</b>
+                        ${item.confidence}%
+
+                    </div>
+
+                    <div class="time">
+                        📅 ${item.time}
+                    </div>
+
+                `;
+
+                container.appendChild(card);
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
