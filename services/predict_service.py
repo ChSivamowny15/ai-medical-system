@@ -95,7 +95,9 @@ def predict_image(image_path, scan_type):
     # SELECT MODEL
     # =========================
 
-    if scan_type == "mri":
+    scan_type = scan_type.lower().strip()
+
+    if scan_type == "mri": 
 
         model = mri_model
 
