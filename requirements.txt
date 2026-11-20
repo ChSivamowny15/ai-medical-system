@@ -14,7 +14,7 @@ tensorflow-cpu==2.13.0
 keras==2.13.1
 h5py==3.9.0
 
-python-docx==1.2.0
+python-docx==0.8.11
 
 gunicorn==21.2.0
 Werkzeug==3.1.3
